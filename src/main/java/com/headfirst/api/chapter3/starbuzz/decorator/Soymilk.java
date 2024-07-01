@@ -1,0 +1,20 @@
+package com.headfirst.api.chapter3.starbuzz.decorator;
+
+import com.headfirst.api.chapter3.starbuzz.base.Beverage;
+import com.headfirst.api.chapter3.starbuzz.base.CondimentDecorator;
+
+public class Soymilk extends CondimentDecorator {
+    public Soymilk(Beverage beverage) {
+        this.beverage = beverage;
+    }
+
+    @Override
+    public String getDescription() {
+        return beverage.getDescription() + ", soy milk";
+    }
+
+    @Override
+    public double cost() {
+        return beverage.cost() + .15;
+    }
+}
