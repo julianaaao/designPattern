@@ -18,12 +18,14 @@ data push :
 measurementChanged() 에서 notifyObservers() 호출
 notifyObservers()에서 List에 등록된 Observer에 notify(update 메서드)를 보낸다.
 Observer는 update 메서드를 통해 data를 받아 Display 객체들에서는 해당 data를 Display 특성에 맞게 display()한다.
+-> Push 모델은 실시간 업데이트에 적합하지만, 많은 데이터를 전송해야 할 때는 비효율적일 수 있다
 
 data pull :
 push는 subject 가 데이터를 push 하고 observer가 data를 가공하여 사용하는데,
 이렇게 되면 불필요한 데이터도 모두 받고 사용하여야 한다.
 따라서 확장성 측면으로 볼때는 data를 pull 하는 방법이 더 효율적.
 observer는 subject에 등록과 삭제하기 위해 subject 객체를 가지므로 subject.getData()를 통해 데이터를 pull 해올 수 있다.
+->Pull 모델은 필요할 때만 데이터를 가져오므로 효율적이지만, 실시간성은 떨어진다.
 
 
 객체지향 원칙 :
@@ -31,3 +33,7 @@ observer는 subject에 등록과 삭제하기 위해 subject 객체를 가지므
 - 상속보다는 구성을 활용한다.
 - 구현보다는 인터페이스에 맞춰서 프로그래밍한다.
 + 상호작용하는 객체 사이에서는 가능하면 느슨한 결합을 사용해야 한다.
+
+
+------------------------------------------------------------------------------------------------------
+-Observer가 많아질수록 성능에 부정적인 영향 ?
