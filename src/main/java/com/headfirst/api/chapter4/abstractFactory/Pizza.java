@@ -1,8 +1,5 @@
 package com.headfirst.api.chapter4.abstractFactory;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public abstract class Pizza {
     String name;
 
@@ -34,8 +31,8 @@ public abstract class Pizza {
     }
 
     public String toString(){
-        StringBuffer result = new StringBuffer();
-        result.append("--- " + name + "--- \n");
+        StringBuilder result = new StringBuilder();
+        result.append("--- ").append(name).append("--- \n");
 
         if(dough != null) {
             result.append(dough);
