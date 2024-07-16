@@ -1,4 +1,4 @@
-package com.headfirst.api.chapter6.remote;
+package com.headfirst.api.chapter6.simpleRemote;
 
 public class SimpleRemoteControl {
     Command slot;

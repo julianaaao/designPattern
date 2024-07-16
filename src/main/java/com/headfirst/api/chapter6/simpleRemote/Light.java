@@ -1,10 +1,7 @@
-package com.headfirst.api.chapter6.remote;
+package com.headfirst.api.chapter6.simpleRemote;
 
 public class Light {
-    String location = "";
-
-    public Light(String location) {
-        this.location = location;
+    public Light() {
     }
 
     public void on() {
