@@ -17,6 +17,15 @@ public class ClamPizza implements Pizza{
     }
 
     @Override
+    public void prepare() {
+        System.out.println("준비 중 : " + name);
+        dough = ingredientFactory.createDough();
+        sauce = ingredientFactory.createSauce();
+        cheese = ingredientFactory.createCheese();
+        clams = ingredientFactory.createClam();
+    }
+
+    @Override
     public void bake() {
         System.out.println("175도에서 25분 간 굽기");
     }

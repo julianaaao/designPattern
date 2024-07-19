@@ -13,11 +13,17 @@ public class ChicagoPizzaStore implements PizzaStore{
             pizza = new ClamPizza(ingredientFactory);
             pizza.setName("시카코 스타일 조개 피자");
         }
-        return null;
+        return pizza;
     }
 
     @Override
     public Pizza orderPizza(String type) {
-        return null;
+        Pizza pizza = createPizza(type);
+        System.out.println("--- Making a " + pizza.getName() + " ---");
+        pizza.prepare();
+        pizza.bake();
+        pizza.cut();
+        pizza.box();
+        return pizza;
     }
 }

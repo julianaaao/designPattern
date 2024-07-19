@@ -1,19 +1,22 @@
 package com.headfirst.api.chapter4.intrface;
 
-
-
 public class CheesePizza implements Pizza{
     PizzaIngredientFactory ingredientFactory;
     String name;
     Dough dough;
     Cheese cheese;
-    Clams clams;
-    Pepperoni pepperoni;
     Sauce sauce;
-    Veggies veggies[];
 
     public CheesePizza(PizzaIngredientFactory ingredientFactory){
         this.ingredientFactory = ingredientFactory;
+    }
+
+    @Override
+    public void prepare() {
+        System.out.println("준비 중 : " + name);
+        dough = ingredientFactory.createDough();
+        sauce = ingredientFactory.createSauce();
+        cheese = ingredientFactory.createCheese();
     }
 
     @Override
@@ -53,25 +56,8 @@ public class CheesePizza implements Pizza{
             result.append(sauce);
             result.append("\n");
         }
-        if(veggies != null) {
-            for(int i = 0; i < veggies.length; i++){
-                result.append(veggies[i]);
-                if(i < veggies.length-1){
-                    result.append(", ");
-                }
-            }
-            result.append("\n");
-        }
         if(cheese != null) {
             result.append(cheese);
-            result.append("\n");
-        }
-        if(clams != null) {
-            result.append(clams);
-            result.append("\n");
-        }
-        if(pepperoni != null) {
-            result.append(pepperoni);
             result.append("\n");
         }
         return result.toString();
