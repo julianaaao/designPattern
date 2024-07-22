@@ -40,8 +40,8 @@ public class TurkeyAdapter implements Duck {
 
 ### 2. 클래스 어댑터 (Class Adapter) :
 
-    - 상속(inheritance) 사용. 
-    - 어댑터 클래스가 타켓 인터페이스와 어댑터가 변환할 클래스를 동시에 상속받음. 
+- 상속(inheritance) 사용. 
+- 어댑터 클래스가 타켓 인터페이스와 어댑터가 변환할 클래스를 동시에 상속받음. 
 
 **예시 :**
 ```java
